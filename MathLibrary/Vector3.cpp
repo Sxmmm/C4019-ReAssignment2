@@ -91,3 +91,11 @@ const Vector3 & Vector3::operator*=(const Vector3 & v1)
 	z = z * v1.z;
 	return *this;
 }
+
+const Vector3 & Vector3::operator/=(const Vector3 & v1)
+{
+	x = x / v1.x;
+	y = y / v1.y;
+	z = z / v1.z;
+	return *this;
+}
