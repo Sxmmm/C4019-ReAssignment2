@@ -10,7 +10,7 @@ using namespace std;
 int main(int argc, char **argv)
 {
 	
-	float matrixA[16] = { 1.0, 0.0, 0.0, 30.0,
+	/*float matrixA[16] = { 1.0, 0.0, 0.0, 30.0,
 		0.0, 1.0, 0.0, 30.0,
 		0.0, 0.0, 1.0, 30.0,
 		0.0, 0.0, 0.0, 1.0 };
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	float matrixB[16] = { 23.0, 21.0, 0.0, 1.0,
 		10.0, 9.0, 1.0, 0.0,
 		1.0, 2.0, 1.0, 0.0,
-		3.0, 2.0, 9.0, 9.0 };
+		3.0, 2.0, 9.0, 9.0 };*/
 
 	float x1 = 0.0f;
 	float y1 = 0.0f;
