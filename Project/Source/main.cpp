@@ -1,6 +1,7 @@
 #include "Matrix44.h"
 #include "Matrix33.h"
 #include "Vector3.h"
+#include "Vector2.h"
 
 #include <iostream>
 #include <string>

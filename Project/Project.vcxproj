@@ -82,7 +82,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)MathLibrary\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Matrix33.obj;Matrix44.obj;Vector3.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Matrix33.obj;Matrix44.obj;Vector3.obj;Vector2.obj;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <ProjectReference>
