@@ -34,5 +34,7 @@ public:
 	Matrix33 operator*(const Matrix33 &matB);
 	Matrix33 operator*(const float &fl);
 	Matrix33 operator/(const float &fl);
+
+	bool operator==(const Matrix33 &matB);
 	
 };
