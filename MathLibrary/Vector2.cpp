@@ -78,9 +78,7 @@ const Vector2 & Vector2::operator/=(const float & v1)
 }
 const Vector2 & Vector2::operator+(const Vector2 &v1)
 {
-	x = x + v1.x;
-	y = y + v1.y;
-	return *this;
+	return Vector2::Vector2((x + v1.x), (y + v1.y));
 }
 const Vector2 & Vector2::operator-(const Vector2 &v1)
 {
