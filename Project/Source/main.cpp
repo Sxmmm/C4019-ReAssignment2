@@ -241,6 +241,21 @@ int main(int argc, char **argv)
 	Matrix33 mSub;
 	mSub = (Matrix1 - Matrix2);
 
+	Matrix33 mMulti1;
+	mMulti1 = (Matrix1 * 3);
+
+	Matrix33 mMulti2;
+	mMulti2 = (Matrix2 * 3);
+
+	Matrix33 mMultiTotal;
+	mMultiTotal = (Matrix1 * Matrix2);
+
+	Matrix33 mDivide1;
+	mDivide1 = (Matrix1 / 3);
+
+	Matrix33 mDivide2;
+	mDivide2 = (Matrix2 / 3);
+
 	cout << "\\\\\\\\\\\\\\\\\\ \n";
 	cout << "Matrix1:\n";
 	Matrix1.PrintMatrix();
@@ -251,6 +266,18 @@ int main(int argc, char **argv)
 	mAdd.PrintMatrix();
 	cout << "Matrix1 - Matrix2 =  \n";
 	mSub.PrintMatrix();
+	cout << "Matrix1 * 3 =  \n";
+	mMulti1.PrintMatrix();
+	cout << "Matrix2 * 3 =  \n";
+	mMulti2.PrintMatrix();
+	cout << "Press 'Enter' to see the rest of the Matrix3 demonstration...";
+	cin.get();
+	cout << "Matrix1 * Matrix2 =  \n";
+	mMultiTotal.PrintMatrix();
+	cout << "Matrix1 / 3 =  \n";
+	mDivide1.PrintMatrix();
+	cout << "Matrix2 / 3 =  \n";
+	mDivide2.PrintMatrix();
 
 	cin.get();
 	////Print Matrix A
