@@ -74,17 +74,14 @@ int main(int argc, char **argv)
 
 	//Setting up a vector to hold v1 multiplied
 	Vector3 multi;
-	multi = v1;
-	multi *= 3;
+	multi = (v1 * 3);
 
 	//Setting up a vector to hold v2 multiplied
 	Vector3 multi1;
-	multi1 = v2;
-	multi1 *= 3;
+	multi1 = (v2 * 3);
 
 	Vector3 total;
-	total = v1;
-	total *= v2;
+	total = (v1 * v2);
 
 	//Print out the inputs from the user
 	cout << "///////////////////\n";
@@ -153,22 +150,18 @@ int main(int argc, char **argv)
 
 	//Setting up a Vector3 to hold the Vectors added together
 	Vector2 addition1;
-	addition1 + vv1;
-	addition1 + vv2;
+	addition1 = (vv1 + vv2);
 
 	//Setting up a vector to hold v1 multiplied
 	Vector2 multi11;
-	multi11 = vv1;
-	multi11 *= 3;
+	multi11 = (vv1 * 3);
 
 	//Setting up a vector to hold v2 multiplied
 	Vector2 multi12;
-	multi12 = vv2;
-	multi12 *= 3;
+	multi12 = (vv2 * 3);
 
 	Vector2 total1;
-	total1 = vv1;
-	total1 *= vv2;
+	total1 = (vv1 * vv2);
 
 	//Print out the inputs from the user
 	cout << "///////////////////\n";

@@ -24,11 +24,18 @@ public:
 
 	//Overloaded Operators
 	const Vector2 & operator+=(const Vector2 &v1);
-	const Vector2 & operator+(const Vector2 &v1);
 	const Vector2 & operator-=(const Vector2 &v1);
-	const Vector2 & operator=(const Vector2 &v1);
 	const Vector2 & operator*=(const float &v1);
 	const Vector2 & operator*=(const Vector2 &v1);
 	const Vector2 & operator/=(const Vector2 &v1);
+	const Vector2 & operator/=(const float &v1);
+	const Vector2 & operator+(const Vector2 &v1);
+	const Vector2 & operator-(const Vector2 &v1);
+	const Vector2 & operator*(const float & v1);
+	const Vector2 & operator*(const Vector2 & v1);
+	const Vector2 & operator/(const Vector2 & v1);
+	const Vector2 & operator/(const float & v1);
+	const Vector2 & operator=(const Vector2 &v1);
+
 };
 

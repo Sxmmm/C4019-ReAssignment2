@@ -52,18 +52,6 @@ const Vector2 & Vector2::operator-=(const Vector2 & v1)
 	y -= v1.y;
 	return *this;
 }
-const Vector2 & Vector2::operator+(const Vector2 &v1)
-{
-	x = x + v1.x;
-	y = y + v1.y;
-	return *this;
-}
-const Vector2 & Vector2::operator=(const Vector2 &v1)
-{
-	x = v1.x;
-	y = v1.y;
-	return *this;
-}
 const Vector2 & Vector2::operator*=(const float & v1)
 {
 	x = x * v1;
@@ -80,5 +68,43 @@ const Vector2 & Vector2::operator/=(const Vector2 & v1)
 {
 	x = x / v1.x;
 	y = y / v1.y;
+	return *this;
+}
+const Vector2 & Vector2::operator/=(const float & v1)
+{
+	x = x / v1;
+	y = y / v1;
+	return *this;
+}
+const Vector2 & Vector2::operator+(const Vector2 &v1)
+{
+	x = x + v1.x;
+	y = y + v1.y;
+	return *this;
+}
+const Vector2 & Vector2::operator-(const Vector2 &v1)
+{
+	return Vector2::Vector2((x - v1.x), (y - v1.y));
+}
+const Vector2 & Vector2::operator*(const float & v1)
+{
+	return Vector2::Vector2((x * v1), (y * v1));
+}
+const Vector2 & Vector2::operator*(const Vector2 & v1)
+{
+	return Vector2::Vector2((x * v1.x), (y * v1.y));
+}
+const Vector2 & Vector2::operator/(const Vector2 & v1)
+{
+	return Vector2::Vector2((x / v1.x), (y / v1.y));
+}
+const Vector2 & Vector2::operator/(const float & v1)
+{
+	return Vector2::Vector2((x / v1), (y / v1));
+}
+const Vector2 & Vector2::operator=(const Vector2 &v1)
+{
+	x = v1.x;
+	y = v1.y;
 	return *this;
 }
