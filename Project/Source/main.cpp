@@ -234,6 +234,7 @@ int main(int argc, char **argv)
 	cout << "Press 'Enter' to go to Matrix3 demonstration...";
 	cin.get();
 
+
 	cout << "\n\n\n\n";
 
 	////Print Matrix A
