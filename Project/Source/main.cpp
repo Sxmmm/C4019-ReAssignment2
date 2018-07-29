@@ -72,6 +72,10 @@ int main(int argc, char **argv)
 	Vector3 addition;
 	addition = (v1 + v2);
 
+	//Setting up a Vector3 to hold the Vectors minus
+	Vector3 subtract;
+	subtract = (v1 - v2);
+
 	//Setting up a vector to hold v1 multiplied
 	Vector3 multi;
 	multi = (v1 * 3);
@@ -80,8 +84,21 @@ int main(int argc, char **argv)
 	Vector3 multi1;
 	multi1 = (v2 * 3);
 
+	//Setting up a vector to hold our two vectors multiplied together
 	Vector3 total;
 	total = (v1 * v2);
+
+	//Setting up a vector to hold v1 divided
+	Vector3 divide;
+	divide = (v1 / 3);
+
+	//Setting up a vector to hold v2 divided
+	Vector3 divide1;
+	divide1 = (v2 / 3);
+
+	//Setting up a vector to hold our vectors divided together
+	Vector3 dividetotal;
+	dividetotal = (v1 / v2);
 
 	//Print out the inputs from the user
 	cout << "///////////////////\n";
@@ -97,12 +114,20 @@ int main(int argc, char **argv)
 	cout << "The Distance Between Vector1 and Vector2 =  " << dis << "\n";
 	cout << "Vector1 + Vector2 =  ";
 	addition.printVector();
-	cout << "Vector1 multiplied by 3 =  ";
+	cout << "Vector1 - Vector2 =  ";
+	subtract.printVector();
+	cout << "Vector1 * 3 =  ";
 	multi.printVector();
-	cout << "Vector2 multiplied by 3 =  ";
+	cout << "Vector2 * 3 =  ";
 	multi1.printVector();
-	cout << "The two vectors multiplied are: ";
+	cout << "Vector1 * Vector2 =  ";
 	total.printVector();
+	cout << "Vector1 / 3 =  ";
+	divide.printVector();
+	cout << "Vector2 / 3 =  ";
+	divide1.printVector();
+	cout << "Vector1 / Vector2 =  ";
+	dividetotal.printVector();
 	cout << "\n\n";
 	cout << "Press 'Enter' to go to Vector2 demonstration...";
 	cin.get();
@@ -132,11 +157,11 @@ int main(int argc, char **argv)
 	cin.get();
 	cout << "\n\n\n\n";
 
-	//Setting up the v1 Vector2 inputted by the user
+	//Setting up the vv1 Vector2 inputted by the user
 	Vector2 vv1;
 	vv1 = Vector2::Vector2(xx1, yy1);
 
-	//Setting up the v2 Vector2 inputted by the user
+	//Setting up the vv2 Vector2 inputted by the user
 	Vector2 vv2;
 	vv2 = Vector2::Vector2(xx2, yy2);
 
@@ -148,20 +173,36 @@ int main(int argc, char **argv)
 	float dis1;
 	dis1 = Vector2::distance(vv1, vv2);
 
-	//Setting up a Vector3 to hold the Vectors added together
+	//Setting up a Vector2 to hold the Vectors added together
 	Vector2 addition1;
 	addition1 = (vv1 + vv2);
 
-	//Setting up a vector to hold v1 multiplied
+	//Setting up a Vector2 to hold the Vectors minus
+	Vector2 subtract1;
+	subtract1 = (vv1 - vv2);
+
+	//Setting up a vector to hold vv1 multiplied
 	Vector2 multi11;
 	multi11 = (vv1 * 3);
 
-	//Setting up a vector to hold v2 multiplied
+	//Setting up a vector to hold vv2 multiplied
 	Vector2 multi12;
 	multi12 = (vv2 * 3);
 
 	Vector2 total1;
 	total1 = (vv1 * vv2);
+
+	//Setting up a vector to hold v1 divided
+	Vector2 divide11;
+	divide11 = (vv1 / 3);
+
+	//Setting up a vector to hold v2 divided
+	Vector2 divide12;
+	divide12 = (vv2 / 3);
+
+	//Setting up a vector to hold our vectors divided together
+	Vector2 dividetotal1;
+	dividetotal1 = (vv1 / vv2);
 
 	//Print out the inputs from the user
 	cout << "///////////////////\n";
@@ -175,12 +216,20 @@ int main(int argc, char **argv)
 	cout << "The Distance Between Vector1 and Vector2 =  " << dis1 << "\n";
 	cout << "Vector1 + Vector2 =  ";
 	addition1.printVector();
-	cout << "Vector1 multiplied by 3 =  ";
+	cout << "Vector1 - Vector2 =  ";
+	subtract1.printVector();
+	cout << "Vector1 * 3 =  ";
 	multi11.printVector();
-	cout << "Vector2 multiplied by 3 =  ";
+	cout << "Vector2 * 3 =  ";
 	multi12.printVector();
-	cout << "The two vectors multiplied are: ";
+	cout << "Vector1 * Vector2 =  ";
 	total1.printVector();
+	cout << "Vector1 / 3 =  ";
+	divide11.printVector();
+	cout << "Vector2 / 3 =  ";
+	divide12.printVector();
+	cout << "Vector1 / Vector2 =  ";
+	dividetotal1.printVector();
 	cout << "\n\n";
 	cout << "Press 'Enter' to go to Matrix3 demonstration...";
 	cin.get();
