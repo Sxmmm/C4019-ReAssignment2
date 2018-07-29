@@ -70,8 +70,7 @@ int main(int argc, char **argv)
 
 	//Setting up a Vector3 to hold the Vectors added together
 	Vector3 addition;
-	addition + v1;
-	addition + v2;
+	addition = (v1 + v2);
 
 	//Setting up a vector to hold v1 multiplied
 	Vector3 multi;

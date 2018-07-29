@@ -71,10 +71,22 @@ const Vector3 & Vector3::operator-=(const Vector3 & v1)
 }
 const Vector3 & Vector3::operator+(const Vector3 &v1)
 {
-	x = x + v1.x;
-	y = y + v1.y;
-	z = z + v1.z;
-	return *this;
+	Vector3 result;
+	/*result.x += v1.x;
+	result.y += v1.y;
+	result.z += v1.z;*/
+	result.x = (v1.x + result.x);
+	result.y = (v1.y + result.y);
+	result.z = (v1.z + result.z);
+	return result;
+}
+const Vector3 & Vector3::operator-(const Vector3 &v1)
+{
+	Vector3 result;
+	result.x -= v1.x;
+	result.y -= v1.y;
+	result.z -= v1.z;
+	return result;
 }
 const Vector3 & Vector3::operator=(const Vector3 &v1)
 {
@@ -103,4 +115,43 @@ const Vector3 & Vector3::operator/=(const Vector3 & v1)
 	y = y / v1.y;
 	z = z / v1.z;
 	return *this;
+}
+const Vector3 & Vector3::operator/=(const float & v1)
+{
+	x = x / v1;
+	y = y / v1;
+	z = z / v1;
+	return *this;
+}
+const Vector3 & Vector3::operator*(const float & v1)
+{
+	Vector3 result;
+	result.x = (v1 * result.x);
+	result.y = (v1 * result.y);
+	result.z = (v1 * result.z);
+	return result;
+}
+const Vector3 & Vector3::operator*(const Vector3 & v1)
+{
+	Vector3 result;
+	result.x = (v1.x * result.x);
+	result.y = (v1.y * result.y);
+	result.z = (v1.z * result.z);
+	return result;
+}
+const Vector3 & Vector3::operator/(const Vector3 & v1)
+{
+	Vector3 result;
+	result.x = (result.x / v1.x);
+	result.y = (result.y / v1.y);
+	result.z = (result.z / v1.z);
+	return result;
+}
+const Vector3 & Vector3::operator/(const float & v1)
+{
+	Vector3 result;
+	result.x = (result.x / v1);
+	result.y = (result.y / v1);
+	result.z = (result.z / v1);
+	return result;
 }
