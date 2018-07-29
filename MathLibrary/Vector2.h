@@ -12,17 +12,17 @@ public:
 		y = 0.0f;
 	}
 
-	//Constructor/Destructor
+	//Constructor/Destructor//
 	void initialise();
 	Vector2(float m_x, float m_y);
 	~Vector2();
-
-	//Functions
+	
+	//Functions//
 	static float dotProduct(const Vector2 &v1, const Vector2 &v2);
 	static float distance(const Vector2 &v1, const Vector2 &v2);
 	void printVector();
 
-	//Overloaded Operators
+	//Overloaded Operators//
 	const Vector2 & operator+=(const Vector2 &v1);
 	const Vector2 & operator-=(const Vector2 &v1);
 	const Vector2 & operator*=(const float &v1);

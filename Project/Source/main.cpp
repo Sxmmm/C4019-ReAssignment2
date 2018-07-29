@@ -10,16 +10,6 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-	
-	/*float matrixA[16] = { 1.0, 0.0, 0.0, 30.0,
-		0.0, 1.0, 0.0, 30.0,
-		0.0, 0.0, 1.0, 30.0,
-		0.0, 0.0, 0.0, 1.0 };
-
-	float matrixB[16] = { 23.0, 21.0, 0.0, 1.0,
-		10.0, 9.0, 1.0, 0.0,
-		1.0, 2.0, 1.0, 0.0,
-		3.0, 2.0, 9.0, 9.0 };*/
 
 	float x1 = 0.0f;
 	float y1 = 0.0f;
@@ -237,6 +227,32 @@ int main(int argc, char **argv)
 
 	cout << "\n\n\n\n";
 
+
+
+	Matrix33 Matrix1;
+	Matrix1 = Matrix33::Matrix33(0, 1, 2, 3, 4, 5, 6, 7, 8);
+
+	Matrix33 Matrix2;
+	Matrix2 = Matrix33::Matrix33(9, 10, 11, 12, 13, 14, 15, 16, 17);
+
+	Matrix33 mAdd;
+	mAdd = (Matrix1 + Matrix2);
+
+	Matrix33 mSub;
+	mSub = (Matrix1 - Matrix2);
+
+	cout << "\\\\\\\\\\\\\\\\\\ \n";
+	cout << "Matrix1:\n";
+	Matrix1.PrintMatrix();
+	cout << "Matrix2:\n";
+	Matrix2.PrintMatrix();
+	cout << "\\\\\\\\\\\\\\\\\\ \n";
+	cout << "Matrix1 + Matrix2 =  \n";
+	mAdd.PrintMatrix();
+	cout << "Matrix1 - Matrix2 =  \n";
+	mSub.PrintMatrix();
+
+	cin.get();
 	////Print Matrix A
 	//p = 0;
 	//for (int i = 0; i < 4; i++)
