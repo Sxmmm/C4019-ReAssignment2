@@ -16,6 +16,9 @@ public:
 
 	//Functions//
 	void PrintMatrix();
+	void rotate_x(const float & angle);
+	void rotate_y(const float & angle);
+	void rotate_z(const float & angle);
 	void scale(const Vector3 &scale);
 	
 
@@ -30,7 +33,6 @@ public:
 	Matrix33 operator-(const Matrix33 &matB);
 	Matrix33 operator*(const Matrix33 &matB);
 	Matrix33 operator*(const float &fl);
-	Matrix33 operator/(const Matrix33 &matB);
 	Matrix33 operator/(const float &fl);
 	
 };

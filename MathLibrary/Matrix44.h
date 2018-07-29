@@ -23,7 +23,7 @@ public:
 	Matrix44 operator - (const Matrix44 &matB);
 	Matrix44 operator += (const Matrix44 &matB);
 	Matrix44 operator -= (const Matrix44 &matB);
-	Matrix44 operator *= (const Matrix44 &matB);
+	//Matrix44 operator *= (const Matrix44 &matB);
 	void translate(const Vector3 &trans);
 	void rotate_x(const float &angle);
 	void rotate_y(const float &angle);
