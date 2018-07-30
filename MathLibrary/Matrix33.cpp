@@ -19,6 +19,11 @@ Matrix33::Matrix33(float m0, float m1, float m2, float m3, float m4, float m5, f
 	m[7] = m7;
 	m[8] = m8;
 }
+///////////
+// 1 0 0 //
+// 0 1 0 //
+// 0 0 1 //
+///////////
 void Matrix33::identity(void)
 {
 	m[0] = 1.0f; m[3] = 0.0f; m[6] = 0.0f;
@@ -31,11 +36,6 @@ Matrix33::~Matrix33()
 }
 
 //Functions//
-///////////
-// 1 0 0 //
-// 0 1 0 //
-// 0 0 1 //
-///////////
 void Matrix33::scale(const Vector3 &scale)
 {
 	m[0] = scale.x;
@@ -143,23 +143,6 @@ Matrix33 Matrix33::operator*=(const float &fl)
 	result.m[6] *= fl;
 	result.m[7] *= fl;
 	result.m[8] *= fl;
-
-	return result;
-}
-Matrix33 Matrix33::operator/=(const Matrix33 &matB)
-{
-	Matrix33 result;
-	result.m[0] /= matB.m[0];
-	result.m[1] /= matB.m[1];
-	result.m[2] /= matB.m[2];
-
-	result.m[3] /= matB.m[3];
-	result.m[4] /= matB.m[4];
-	result.m[5] /= matB.m[5];
-
-	result.m[6] /= matB.m[6];
-	result.m[7] /= matB.m[7];
-	result.m[8] /= matB.m[8];
 
 	return result;
 }
