@@ -256,6 +256,9 @@ int main(int argc, char **argv)
 	Matrix33 mDivide2;
 	mDivide2 = (Matrix2 / 3);
 
+	Vector3 vxm;
+	vxm = (v1 * Matrix1);
+
 	cout << "\\\\\\\\\\\\\\\\\\ \n";
 	cout << "---------Matrix1:\n";
 	Matrix1.PrintMatrix();
@@ -270,6 +273,8 @@ int main(int argc, char **argv)
 	mMulti1.PrintMatrix();
 	cout << "---------Matrix2 * 3 =  \n";
 	mMulti2.PrintMatrix();
+	cout << "---------(" << v1.x << " " << v1.y << " " << v1.z << ") * " << "Matrix1" << " =  \n";
+	vxm.printVector();
 	cout << "Press 'Enter' to see the rest of the Matrix3 demonstration...";
 	cin.get();
 	cout << "\n---------Matrix1 * Matrix2 =  \n";

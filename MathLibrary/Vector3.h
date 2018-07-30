@@ -26,10 +26,7 @@ public:
 	static float dotProduct(const Vector3 &v1, const Vector3 &v2);
 	static float distance(const Vector3 &v1, const Vector3 &v2);
 	void printVector();
-	void rotate_x(const float &angle);
-	void rotate_y(const float &angle);
-	void rotate_z(const float &angle);
-
+	
 	//Overloaded Operators//
 	const Vector3 & operator+=(const Vector3 &v1);
 	const Vector3 & operator-=(const Vector3 &v1);
@@ -41,6 +38,7 @@ public:
 	const Vector3 & operator-(const Vector3 &v1);
 	const Vector3 & operator*(const float & v1);
 	const Vector3 & operator*(const Vector3 & v1);
+	const Vector3 & operator*(const Matrix33 & v1);
 	const Vector3 & operator/(const Vector3 & v1);
 	const Vector3 & operator/(const float & v1);
 	const Vector3 & operator=(const Vector3 &v1);

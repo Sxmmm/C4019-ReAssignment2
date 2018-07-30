@@ -1,4 +1,5 @@
 #include "Vector3.h"
+#include "Matrix33.h"
 
 #include <math.h>
 #include <iostream>
@@ -112,6 +113,12 @@ const Vector3 & Vector3::operator*(const float & v1)
 const Vector3 & Vector3::operator*(const Vector3 & v1)
 {
 	return Vector3::Vector3((x * v1.x), (y * v1.y), (z * v1.z));
+}
+const Vector3 & Vector3::operator*(const Matrix33 &matB)
+{
+	return Vector3::Vector3((matB.m[0] * x) + (matB.m[1] * y) + (matB.m[2] * z),
+		(matB.m[3] * x) + (matB.m[4] * y) + (matB.m[5] * z),
+		(matB.m[6] * x) + (matB.m[7] * y) + (matB.m[8] * z));
 }
 const Vector3 & Vector3::operator/(const Vector3 & v1)
 {
