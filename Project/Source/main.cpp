@@ -257,29 +257,28 @@ int main(int argc, char **argv)
 	mDivide2 = (Matrix2 / 3);
 
 	cout << "\\\\\\\\\\\\\\\\\\ \n";
-	cout << "Matrix1:\n";
+	cout << "---------Matrix1:\n";
 	Matrix1.PrintMatrix();
-	cout << "Matrix2:\n";
+	cout << "---------Matrix2:\n";
 	Matrix2.PrintMatrix();
 	cout << "\\\\\\\\\\\\\\\\\\ \n";
-	cout << "Matrix1 + Matrix2 =  \n";
+	cout << "---------Matrix1 + Matrix2 =  \n";
 	mAdd.PrintMatrix();
-	cout << "Matrix1 - Matrix2 =  \n";
+	cout << "---------Matrix1 - Matrix2 =  \n";
 	mSub.PrintMatrix();
-	cout << "Matrix1 * 3 =  \n";
+	cout << "---------Matrix1 * 3 =  \n";
 	mMulti1.PrintMatrix();
-	cout << "Matrix2 * 3 =  \n";
+	cout << "---------Matrix2 * 3 =  \n";
 	mMulti2.PrintMatrix();
 	cout << "Press 'Enter' to see the rest of the Matrix3 demonstration...";
 	cin.get();
-	cout << "Matrix1 * Matrix2 =  \n";
+	cout << "\n---------Matrix1 * Matrix2 =  \n";
 	mMultiTotal.PrintMatrix();
-	cout << "Matrix1 / 3 =  \n";
+	cout << "---------Matrix1 / 3 =  \n";
 	mDivide1.PrintMatrix();
-	cout << "Matrix2 / 3 =  \n";
+	cout << "---------Matrix2 / 3 =  \n";
 	mDivide2.PrintMatrix();
-
-	
+	cout << "------------------\n";
 	if (Matrix1 == Matrix2)
 	{
 		cout << "The two matrices are equal.\n";
@@ -299,7 +298,64 @@ int main(int argc, char **argv)
 	Matrix44 m4Matrix1;
 	m4Matrix1 = Matrix44::Matrix44(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
 
+	Matrix44 m4Matrix2;
+	m4Matrix2 = Matrix44::Matrix44(16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31);
+
+	Matrix44 m4Add;
+	m4Add = (m4Matrix1 + m4Matrix2);
+
+	Matrix44 m4Sub;
+	m4Sub = (m4Matrix1 - m4Matrix2);
+
+	Matrix44 m4Multi;
+	m4Multi = (m4Matrix1 * 3);
+
+	Matrix44 m4Multi1;
+	m4Multi1 = (m4Matrix2 * 3);
+
+	Matrix44 m4MultiTotal;
+	m4MultiTotal = (m4Matrix1 * m4Matrix2);
+
+	Matrix44 m4Divide1;
+	m4Divide1 = (m4Matrix1 / 3);
+
+	Matrix44 m4Divide2;
+	m4Divide2 = (m4Matrix2 / 3);
+
+
+	cout << "\\\\\\\\\\\\\\\\\\\\\ \n";
+	cout << "Matrix1:\n";
 	m4Matrix1.PrintMatrix();
+	cout << "Matrix2:\n";
+	m4Matrix2.PrintMatrix();
+	cout << "\\\\\\\\\\\\\\\\\\\\\ \n";
+	cout << "---------Matrix1 + Matrix2 =  \n";
+	m4Add.PrintMatrix();
+	cout << "---------Matrix1 - Matrix2 =  \n";
+	m4Sub.PrintMatrix();
+	cout << "Press 'Enter' to see the rest of the Matrix4 demonstration...";
+	cin.get();
+	cout << "---------Matrix1 * 3 =  \n";
+	m4Multi.PrintMatrix();
+	cout << "---------Matrix2 * 3 =  \n";
+	m4Multi1.PrintMatrix();
+	cout << "------------------Matrix1 * Matrix2 =  \n";
+	m4MultiTotal.PrintMatrix();
+	cout << "------------------Matrix1 / 3 =  \n";
+	m4Divide1.PrintMatrix();
+	cout << "------------------Matrix2 / 3 =  \n";
+	m4Divide2.PrintMatrix();
+	cout << "------------------\n";
+	if (m4Matrix1 == m4Matrix2)
+	{
+		cout << "The two matrices are equal.\n";
+	}
+	else {
+		cout << "The two matrices are not equal.\n";
+	}
+
+	cin.get();
+
 
 	////Print Matrix A
 	//p = 0;

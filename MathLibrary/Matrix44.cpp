@@ -52,12 +52,12 @@ void Matrix44::PrintMatrix()
 	int p = 0;
 	for (int i = 0; i < 4; i++)
 	{
-		cout << "\n";
 		for (int j = 0; j < 4; j++)
 		{
 			cout << m[p] << " ";
 			p++;
 		}
+		cout << "\n";
 	}
 }
 void Matrix44::scale(const Vector3 &scale)
@@ -153,15 +153,78 @@ Matrix44 Matrix44::operator-=(const Matrix44 &matB)
 }
 Matrix44 Matrix44::operator*=(const Matrix44 &matB)
 {
+	Matrix44 result;
+	result.m[0] *= ((m[0] * matB.m[0]) + (m[1] * matB.m[4]) + (m[2] * matB.m[8]) + (m[3] * matB.m[12]));
+	result.m[1] *= ((m[0] * matB.m[1]) + (m[1] * matB.m[5]) + (m[2] * matB.m[9]) + (m[3] * matB.m[13]));
+	result.m[2] *= ((m[0] * matB.m[2]) + (m[1] * matB.m[6]) + (m[2] * matB.m[10]) + (m[3] * matB.m[14]));
+	result.m[3] *= ((m[0] * matB.m[3]) + (m[1] * matB.m[7]) + (m[2] * matB.m[11]) + (m[3] * matB.m[15]));
+	
+	result.m[4] *= ((m[4] * matB.m[0]) + (m[5] * matB.m[4]) + (m[6] * matB.m[8]) + (m[7] * matB.m[12]));
+	result.m[5] *= ((m[4] * matB.m[1]) + (m[5] * matB.m[5]) + (m[6] * matB.m[9]) + (m[7] * matB.m[13]));
+	result.m[6] *= ((m[4] * matB.m[2]) + (m[5] * matB.m[6]) + (m[6] * matB.m[10]) + (m[7] * matB.m[14]));
+	result.m[7] *= ((m[4] * matB.m[3]) + (m[5] * matB.m[7]) + (m[6] * matB.m[11]) + (m[7] * matB.m[15]));
 
+	result.m[8] *= ((m[8] * matB.m[0]) + (m[9] * matB.m[4]) + (m[10] * matB.m[8]) + (m[11] * matB.m[12]));
+	result.m[9] *= ((m[8] * matB.m[1]) + (m[9] * matB.m[5]) + (m[10] * matB.m[9]) + (m[11] * matB.m[13]));
+	result.m[10] *= ((m[8] * matB.m[2]) + (m[9] * matB.m[6]) + (m[10] * matB.m[10]) + (m[11] * matB.m[14]));
+	result.m[11] *= ((m[8] * matB.m[3]) + (m[9] * matB.m[7]) + (m[10] * matB.m[11]) + (m[11] * matB.m[15]));
+
+	result.m[12] *= ((m[12] * matB.m[0]) + (m[13] * matB.m[4]) + (m[14] * matB.m[8]) + (m[15] * matB.m[12]));
+	result.m[13] *= ((m[12] * matB.m[1]) + (m[13] * matB.m[5]) + (m[14] * matB.m[9]) + (m[15] * matB.m[13]));
+	result.m[14] *= ((m[12] * matB.m[2]) + (m[13] * matB.m[6]) + (m[14] * matB.m[10]) + (m[15] * matB.m[14]));
+	result.m[15] *= ((m[12] * matB.m[3]) + (m[13] * matB.m[7]) + (m[14] * matB.m[11]) + (m[15] * matB.m[15]));
+
+	return result;
 }
 Matrix44 Matrix44::operator*=(const float &fl)
 {
+	Matrix44 result;
+	result.m[0] *= fl;
+	result.m[1] *= fl;
+	result.m[2] *= fl;
+	result.m[3] *= fl;
 
+	result.m[4] *= fl;
+	result.m[5] *= fl;
+	result.m[6] *= fl;
+	result.m[7] *= fl;
+
+	result.m[8] *= fl;
+	result.m[9] *= fl;
+	result.m[10] *= fl;
+	result.m[11] *= fl;
+
+	result.m[12] *= fl;
+	result.m[13] *= fl;
+	result.m[14] *= fl;
+	result.m[15] *= fl;
+
+	return result;
 }
 Matrix44 Matrix44::operator/=(const float &fl)
 {
+	Matrix44 result;
+	result.m[0] /= fl;
+	result.m[1] /= fl;
+	result.m[2] /= fl;
+	result.m[3] /= fl;
 
+	result.m[4] /= fl;
+	result.m[5] /= fl;
+	result.m[6] /= fl;
+	result.m[7] /= fl;
+
+	result.m[8] /= fl;
+	result.m[9] /= fl;
+	result.m[10] /= fl;
+	result.m[11] /= fl;
+
+	result.m[12] /= fl;
+	result.m[13] /= fl;
+	result.m[14] /= fl;
+	result.m[15] /= fl;
+
+	return result;
 }
 Matrix44 Matrix44::operator+(const Matrix44 &matB)
 {
@@ -215,15 +278,78 @@ Matrix44 Matrix44::operator-(const Matrix44 &matB)
 }
 Matrix44 Matrix44::operator*(const Matrix44 &matB)
 {
+	Matrix44 result;
+	result.m[0] = ((m[0] * matB.m[0]) + (m[1] * matB.m[4]) + (m[2] * matB.m[8]) + (m[3] * matB.m[12]));
+	result.m[1] = ((m[0] * matB.m[1]) + (m[1] * matB.m[5]) + (m[2] * matB.m[9]) + (m[3] * matB.m[13]));
+	result.m[2] = ((m[0] * matB.m[2]) + (m[1] * matB.m[6]) + (m[2] * matB.m[10]) + (m[3] * matB.m[14]));
+	result.m[3] = ((m[0] * matB.m[3]) + (m[1] * matB.m[7]) + (m[2] * matB.m[11]) + (m[3] * matB.m[15]));
 
+	result.m[4] = ((m[4] * matB.m[0]) + (m[5] * matB.m[4]) + (m[6] * matB.m[8]) + (m[7] * matB.m[12]));
+	result.m[5] = ((m[4] * matB.m[1]) + (m[5] * matB.m[5]) + (m[6] * matB.m[9]) + (m[7] * matB.m[13]));
+	result.m[6] = ((m[4] * matB.m[2]) + (m[5] * matB.m[6]) + (m[6] * matB.m[10]) + (m[7] * matB.m[14]));
+	result.m[7] = ((m[4] * matB.m[3]) + (m[5] * matB.m[7]) + (m[6] * matB.m[11]) + (m[7] * matB.m[15]));
+
+	result.m[8] = ((m[8] * matB.m[0]) + (m[9] * matB.m[4]) + (m[10] * matB.m[8]) + (m[11] * matB.m[12]));
+	result.m[9] = ((m[8] * matB.m[1]) + (m[9] * matB.m[5]) + (m[10] * matB.m[9]) + (m[11] * matB.m[13]));
+	result.m[10] = ((m[8] * matB.m[2]) + (m[9] * matB.m[6]) + (m[10] * matB.m[10]) + (m[11] * matB.m[14]));
+	result.m[11] = ((m[8] * matB.m[3]) + (m[9] * matB.m[7]) + (m[10] * matB.m[11]) + (m[11] * matB.m[15]));
+
+	result.m[12] = ((m[12] * matB.m[0]) + (m[13] * matB.m[4]) + (m[14] * matB.m[8]) + (m[15] * matB.m[12]));
+	result.m[13] = ((m[12] * matB.m[1]) + (m[13] * matB.m[5]) + (m[14] * matB.m[9]) + (m[15] * matB.m[13]));
+	result.m[14] = ((m[12] * matB.m[2]) + (m[13] * matB.m[6]) + (m[14] * matB.m[10]) + (m[15] * matB.m[14]));
+	result.m[15] = ((m[12] * matB.m[3]) + (m[13] * matB.m[7]) + (m[14] * matB.m[11]) + (m[15] * matB.m[15]));
+
+	return result;
 }
 Matrix44 Matrix44::operator*(const float &fl)
 {
+	Matrix44 result;
+	result.m[0] = m[0] * fl;
+	result.m[1] = m[1] * fl;
+	result.m[2] = m[2] * fl;
+	result.m[3] = m[3] * fl;
 
+	result.m[4] = m[4] * fl;
+	result.m[5] = m[5] * fl;
+	result.m[6] = m[6] * fl;
+	result.m[7] = m[7] * fl;
+
+	result.m[8] = m[8] * fl;
+	result.m[9] = m[9] * fl;
+	result.m[10] = m[10] * fl;
+	result.m[11] = m[11] * fl;
+
+	result.m[12] = m[12] * fl;
+	result.m[13] = m[13] * fl;
+	result.m[14] = m[14] * fl;
+	result.m[15] = m[15] * fl;
+
+	return result;
 }
 Matrix44 Matrix44::operator/(const float &fl)
 {
+	Matrix44 result;
+	result.m[0] = m[0] / fl;
+	result.m[1] = m[1] / fl;
+	result.m[2] = m[2] / fl;
+	result.m[3] = m[3] / fl;
 
+	result.m[4] = m[4] / fl;
+	result.m[5] = m[5] / fl;
+	result.m[6] = m[6] / fl;
+	result.m[7] = m[7] / fl;
+
+	result.m[8] = m[8] / fl;
+	result.m[9] = m[9] / fl;
+	result.m[10] = m[10] / fl;
+	result.m[11] = m[11] / fl;
+
+	result.m[12] = m[12] / fl;
+	result.m[13] = m[13] / fl;
+	result.m[14] = m[14] / fl;
+	result.m[15] = m[15] / fl;
+
+	return result;
 }
 
 bool Matrix44::operator==(const Matrix44 & matB)
