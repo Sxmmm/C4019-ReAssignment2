@@ -233,8 +233,8 @@ int main(int argc, char **argv)
 	Matrix1 = Matrix33::Matrix33(0, 1, 2, 3, 4, 5, 6, 7, 8);
 
 	Matrix33 Matrix2;
-	Matrix2 = Matrix33::Matrix33(0, 1, 2, 3, 4, 5, 6, 7, 8);
-	//9, 10, 11, 12, 13, 14, 15, 16, 17
+	Matrix2 = Matrix33::Matrix33(9, 10, 11, 12, 13, 14, 15, 16, 17);
+
 	Matrix33 mAdd;
 	mAdd = (Matrix1 + Matrix2);
 

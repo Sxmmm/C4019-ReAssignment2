@@ -268,65 +268,39 @@ Matrix33 Matrix33::operator/(const float &fl)
 
 bool Matrix33::operator==(const Matrix33 & matB)
 {
-	bool rTrue;
-	Matrix33 result;
 	int a = 0;
 	for (int i = 0; i < 9; i++)
 	{		
-		if (result.m[i] == matB.m[i])
+		if (m[i] == matB.m[i])
 		{
 			a++;
 		}
-		if (a == 9)
-		{
-			return true;
-		}
-		else {
-			return false;
-		}
-		cout << a << "\n";
 	}
-
-	/*Matrix33 result;
+	if (a == 9)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}	
+}
+bool Matrix33::operator!=(const Matrix33 & matB)
+{
 	int a = 0;
-	if (result.m[0] == matB.m[0])
+	for (int i = 0; i < 9; i++)
 	{
-		a++;
+		if (m[i] != matB.m[i])
+		{
+			a++;
+		}
 	}
-	if (result.m[1] == matB.m[1])
+	if (a == 9)
 	{
-		a++;
+		return true;
 	}
-	if (result.m[2] == matB.m[2])
+	else
 	{
-		a++;
+		return false;
 	}
-	if (result.m[3] == matB.m[3])
-	{
-		a++;
-	}
-	if (result.m[4] == matB.m[4])
-	{
-		a++;
-	}
-	if (result.m[5] == matB.m[5])
-	{
-		a++;
-	}
-	if (result.m[6] == matB.m[6])
-	{
-		a++;
-	}
-	if (result.m[7] == matB.m[7])
-	{
-		a++;
-	}
-	if (result.m[8] == matB.m[8])
-	{
-		a++;
-	}
-
-	if (a == 9)*/
-
-	
 }
