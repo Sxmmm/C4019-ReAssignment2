@@ -20,6 +20,7 @@ public:
 	//Functions//
 	static float dotProduct(const Vector2 &v1, const Vector2 &v2);
 	static float distance(const Vector2 &v1, const Vector2 &v2);
+	static float magnitude(const Vector2 &v1, const Vector2 &v2);
 	void printVector();
 
 	//Overloaded Operators//

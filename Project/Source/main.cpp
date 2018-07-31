@@ -66,6 +66,10 @@ int main(int argc, char **argv)
 	float dis;
 	dis = Vector3::distance(v1, v2);
 
+	//Setting up a float to hold the value of the magnitude
+	float mag;
+	mag = Vector3::magnitude(v1, v2);
+
 	//Setting up a Vector3 to hold the Vectors added together
 	Vector3 addition;
 	addition = (v1 + v2);
@@ -112,6 +116,8 @@ int main(int argc, char **argv)
 	cout << "The Dot Product of Vector1 and Vector2 =  " << dP << "\n";
 	//Printing the distance between the two Vector3 vectors
 	cout << "The Distance Between Vector1 and Vector2 =  " << dis << "\n";
+	//Printing the magnitude of the two Vector3 vectors
+	cout << "The Magnitide of Vector1 and Vector2 =  " << mag << "\n";
 	//Printing the two Vector3 vectors added together
 	cout << "Vector1 + Vector2 =  ";
 	addition.printVector();
@@ -192,6 +198,10 @@ int main(int argc, char **argv)
 	float dis1;
 	dis1 = Vector2::distance(vv1, vv2);
 
+	//Setting up a float to hold the value of the magnitude
+	float mag1;
+	mag1 = Vector2::magnitude(vv1, vv2);
+
 	//Setting up a Vector2 to hold the Vectors added together
 	Vector2 addition1;
 	addition1 = (vv1 + vv2);
@@ -235,6 +245,8 @@ int main(int argc, char **argv)
 	//Printing out the dot product of the two Vector2 vectors
 	cout << "The Distance Between Vector1 and Vector2 =  " << dis1 << "\n";
 	//Printing the two Vector2 vectors added together
+	//Printing the magnitude of the two Vector2 vectors
+	cout << "The Magnitide of Vector1 and Vector2 =  " << mag1 << "\n";
 	cout << "Vector1 + Vector2 =  ";
 	addition1.printVector();
 	//Printing the two Vector2 vectors minused

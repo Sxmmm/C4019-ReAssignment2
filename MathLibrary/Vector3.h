@@ -25,6 +25,7 @@ public:
 	static Vector3 crossProduct(const Vector3 &v1, const Vector3 &v2);
 	static float dotProduct(const Vector3 &v1, const Vector3 &v2);
 	static float distance(const Vector3 &v1, const Vector3 &v2);
+	static float magnitude(const Vector3 &v1, const Vector3 &v2);
 	void printVector();
 	
 	//Overloaded Operators//

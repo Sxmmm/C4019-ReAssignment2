@@ -42,6 +42,14 @@ float Vector2::distance(const Vector2 &v1, const Vector2 &v2)
 
 	return (float)sqrt(dx * dx + dy * dy);
 }
+//This is the magnitude function for Vector2, this returns a float value. The magnitude is used to see if one object is bigger or smaller than another object.
+float Vector2::magnitude(const Vector2 &v1, const Vector2 &v2)
+{
+	float mx = (pow(v1.x, 2) * pow(v2.x, 2));
+	float my = (pow(v1.y, 2) * pow(v2.y, 2));
+
+	return (float)sqrt(mx + my);
+}
 //This is the print vector function. It takes the vector and prints out its x and y values.
 void Vector2::printVector()
 {

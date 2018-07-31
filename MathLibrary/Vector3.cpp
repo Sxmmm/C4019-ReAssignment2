@@ -48,7 +48,7 @@ float Vector3::dotProduct(const Vector3 &v1, const Vector3 &v2)
 {
 	return (v1.x * v2.x + v1.y * v2.y + v1.z * v2.z);
 }
-//This is the distance function for Vector2, this returns a float value. The distance is the measurement of how far the two vectors are apart.
+//This is the distance function for Vector3, this returns a float value. The distance is the measurement of how far the two vectors are apart.
 float Vector3::distance(const Vector3 &v1, const Vector3 &v2)
 {
 	float dx = v1.x - v2.x;
@@ -56,6 +56,15 @@ float Vector3::distance(const Vector3 &v1, const Vector3 &v2)
 	float dz = v1.z - v2.z;
 
 	return (float)sqrt(dx * dx + dy * dy + dz * dz);
+}
+//This is the magnitude function for Vector3, this returns a float value. The magnitude is used to see if one object is bigger or smaller than another object.
+float Vector3::magnitude(const Vector3 &v1, const Vector3 &v2) 
+{
+	float mx = (pow(v1.x, 2) * pow(v2.x, 2));
+	float my = (pow(v1.y, 2) * pow(v2.y, 2));
+	float mz = (pow(v1.z, 2) * pow(v2.z, 2));
+
+	return (float)sqrt(mx + my + mz);
 }
 //This is the print vector function. It takes the vector and prints out its x, y and z values.
 void Vector3::printVector()
