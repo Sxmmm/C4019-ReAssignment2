@@ -5,12 +5,16 @@
 
 using namespace std;
 
+//Defining pi and degrees to radians so we use cos and sin to rotate our Matrix33.
 #define M_PI 3.14159265358979323846264338327950288
 #define DEG_TO_RAD(angle) ((angle) / 180.0 * M_PI)
-
+/////////////////////////
 //Constructor/Destructor/
+/////////////////////////
+//Constructor for our Matrix33
 Matrix44::Matrix44(float m0, float m1, float m2, float m3, float m4, float m5, float m6, float m7, float m8, float m9, float m10, float m11, float m12, float m13, float m14, float m15)
 {
+	//Setting the floats in class Matrix44 to equal what is is in our main.
 	m[0] = m0;
 	m[1] = m1;
 	m[2] = m2;
@@ -36,17 +40,36 @@ Matrix44::Matrix44(float m0, float m1, float m2, float m3, float m4, float m5, f
 /////////////
 void Matrix44::identity(void)
 {
+	//Setting a default identity for our Matrix44
 	m[0] = 1.0f; m[4] = 0.0f; m[8] = 0.0f; m[12] = 0.0f;
 	m[1] = 0.0f; m[5] = 1.0f; m[9] = 0.0f; m[13] = 0.0f;
 	m[2] = 0.0f; m[6] = 0.0f; m[10] = 1.0f; m[14] = 0.0f;
 	m[3] = 0.0f; m[7] = 0.0f; m[11] = 0.0f; m[15] = 1.0f;
 }
+//Deconstructor for our Matrix33
 Matrix44::~Matrix44()
 {
 
 }
 
-//Functions
+/////////////
+//Functions//
+/////////////
+//This is the scale function for Matrix44. This changes the m[0] m[5] and m[10] arrays in our Matrix44 to increase or decrease size using a Vector3.
+void Matrix44::scale(const Vector3 &scale)
+{
+	m[0] = scale.x;
+	m[5] = scale.y;
+	m[10] = scale.z;
+}
+//This is the translate function for Matrix44.This changes the m[12] m[13] and m[14] arrays in our Matrix44 to move a position using a Vector3.
+void Matrix44::translate(const Vector3 &trans)
+{
+	m[12] = trans.x;
+	m[13] = trans.y;
+	m[14] = trans.z;
+}
+//This is the print vector function. It takes the matrix and prints out the first 4 floats and moves down a line to the next 4 and so on.
 void Matrix44::PrintMatrix()
 {
 	int p = 0;
@@ -60,18 +83,7 @@ void Matrix44::PrintMatrix()
 		cout << "\n";
 	}
 }
-void Matrix44::scale(const Vector3 &scale)
-{
-	m[0] = scale.x;
-	m[5] = scale.y;
-	m[10] = scale.z;
-}
-void Matrix44::translate(const Vector3 &trans)
-{
-	m[12] = trans.x;
-	m[13] = trans.y;
-	m[14] = trans.z;
-}
+//These functions are used to rotate x, y or z aound its axis. This is done by changing certain parts of the Matrix44 by using cosine and sine.
 void Matrix44::rotate_x(const float &angle)
 {
 	float s = sin(DEG_TO_RAD(angle));
@@ -100,7 +112,10 @@ void Matrix44::rotate_z(const float &angle)
 	m[5] = c;
 }
 
+///////////////////////
 //Overload Operations//
+///////////////////////
+//This operator takes all the values in the Matrix44 on either side of the function and overwrites the left hand Matrix44 to be itself plus the right hand side Matrix44.
 Matrix44 Matrix44::operator+=(const Matrix44 &matB)
 {
 	Matrix44 result;
@@ -126,6 +141,7 @@ Matrix44 Matrix44::operator+=(const Matrix44 &matB)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on either side of the function and overwrites the left hand Matrix44 to be itself minus the right hand side Matrix44.
 Matrix44 Matrix44::operator-=(const Matrix44 &matB)
 {
 	Matrix44 result;
@@ -151,6 +167,7 @@ Matrix44 Matrix44::operator-=(const Matrix44 &matB)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on either side of the function and overwrites the left hand Matrix44 to be itself multiplied the right hand side Matrix44.
 Matrix44 Matrix44::operator*=(const Matrix44 &matB)
 {
 	Matrix44 result;
@@ -176,6 +193,7 @@ Matrix44 Matrix44::operator*=(const Matrix44 &matB)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on the left side of the function and overwrites it to be itself multiplied by a float value.
 Matrix44 Matrix44::operator*=(const float &fl)
 {
 	Matrix44 result;
@@ -201,6 +219,7 @@ Matrix44 Matrix44::operator*=(const float &fl)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on the left side of the function and overwrites it to be itself divided by a float value.
 Matrix44 Matrix44::operator/=(const float &fl)
 {
 	Matrix44 result;
@@ -226,6 +245,7 @@ Matrix44 Matrix44::operator/=(const float &fl)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on either side of the function and returns them added together.
 Matrix44 Matrix44::operator+(const Matrix44 &matB)
 {
 	Matrix44 result;
@@ -251,6 +271,7 @@ Matrix44 Matrix44::operator+(const Matrix44 &matB)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on either side of the function and returns them minused.
 Matrix44 Matrix44::operator-(const Matrix44 &matB)
 {
 	Matrix44 result;
@@ -276,6 +297,7 @@ Matrix44 Matrix44::operator-(const Matrix44 &matB)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on either side of the function and returns them multiplied together.
 Matrix44 Matrix44::operator*(const Matrix44 &matB)
 {
 	Matrix44 result;
@@ -301,6 +323,7 @@ Matrix44 Matrix44::operator*(const Matrix44 &matB)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on the left side of the function and multiplies it by a float value.
 Matrix44 Matrix44::operator*(const float &fl)
 {
 	Matrix44 result;
@@ -326,6 +349,7 @@ Matrix44 Matrix44::operator*(const float &fl)
 
 	return result;
 }
+//This operator takes all the values in the Matrix44 on the left side of the function and divides it by a float value.
 Matrix44 Matrix44::operator/(const float &fl)
 {
 	Matrix44 result;
@@ -352,6 +376,7 @@ Matrix44 Matrix44::operator/(const float &fl)
 	return result;
 }
 
+//These are our bool operators for 'is equal to' and 'is not equal to'. These have been done by using for loops and a count of the amount that are true.
 bool Matrix44::operator==(const Matrix44 & matB)
 {
 	int a = 0;
